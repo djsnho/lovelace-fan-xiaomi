@@ -1048,7 +1048,7 @@ LED
         // Natural mode
         activeElement = fanboxa.querySelector('.var-natural')
         if (this.supportedAttributes.naturalSpeed) {
-            if (preset_mode === 'Nature') {
+            if (preset_mode === 'Nature' || preset_mode = 'nature') {
                 if (activeElement.classList.contains('active') === false) {
                     activeElement.classList.add('active')
                 }
