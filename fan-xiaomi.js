@@ -430,7 +430,7 @@ class FanXiaomi extends HTMLElement {
         const entityId = this.config.entity;
         const ui = this.getUI();
         const card = document.createElement('ha-card');
-        card.className = 'fan-xiaomi'
+        card.className = 'fan-xiaomi-mox'
         card.appendChild(ui)
 
         // Check if fan is disconnected
@@ -700,7 +700,7 @@ class FanXiaomi extends HTMLElement {
             return;
         }
 
-        this.setUI(this.card.querySelector('.fan-xiaomi-panel'), {
+        this.setUI(this.card.querySelector('.fan-xiaomi-mox-panel'), {
             title: this.config.name || attrs['friendly_name'],
             speed_percentage: this.getSpeedPercentage(hass),
             state: entity.state,
@@ -754,14 +754,14 @@ class FanXiaomi extends HTMLElement {
             fan1s+=`<div class="fan1 ang`+i+`"></div>`
         }
         let fanbox = document.createElement('div')
-        fanbox.className = 'fan-xiaomi-panel'
+        fanbox.className = 'fan-xiaomi-mox-panel'
         fanbox.innerHTML = `
 <style>
-.fan-xiaomi{position:relative;overflow:hidden;width:100%;height:335px}
+.fan-xiaomi-mox{position:relative;overflow:hidden;width:100%;height:335px}
 .offline{opacity:0.3}
 .loading{opacity:0.6}
 .icon{overflow:hidden;width:2em;height:2em;vertical-align:-.15em;fill:gray}
-.fan-xiaomi-panel{position:absolute;top:0;width:100%;text-align:center}
+.fan-xiaomi-mox-panel{position:absolute;top:0;width:100%;text-align:center}
 p{margin:0;padding:0}
 .title{margin-top:20px;height:35px;cursor:pointer}
 .title p{margin:0;padding:0;font-weight:700;font-size:18px}
@@ -1143,7 +1143,7 @@ LED
     }
 }
 
-customElements.define('fan-xiaomi', FanXiaomi);
+customElements.define('fan-xiaomi-mox', FanXiaomi);
 
 class ContentCardEditor extends LitElement {
 
@@ -1270,7 +1270,7 @@ class ContentCardEditor extends LitElement {
 customElements.define("content-card-editor", ContentCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: "fan-xiaomi",
+  type: "fan-xiaomi-mox",
   name: "Xiaomi Fan Lovelace Card",
   preview: true,
   description: "Xiaomi Smartmi Fan Lovelace card for HASS/Home Assistant."
